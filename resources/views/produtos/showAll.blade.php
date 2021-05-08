@@ -14,17 +14,24 @@
             <th scope="col">Categoria</th>
             <th scope="col">Descrição</th>
             <th scope="col">Preço</th>
+            <th scope="col">Editar</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr class = "justify-content-between">
 
+            @foreach($produtos as $produto)
             <td> {{$produto->nome}} </td>
             <td> {{$produto->quantidade}} </td>
             <td> {{$produto->categoria}} </td>
             <td> {{$produto->descricao}} </td>
             <td> {{'R$ ' . $produto->preco}} </td>
+
+             <td> <span class="d-flex">
+        <a href="/produtos/{{$produto->id}}/update" class ="btn btn-info btn-sm ml-1">
+            <i class="fas fa-edit"></i></a> </span></td>
         </tr>
+            @endforeach
         </tbody>
     </table>
 
@@ -32,9 +39,8 @@
         <a href="/produtos/" class="btn btn-info btn-sm ml-1">
             <i class="fas fa-arrow-left"></i>
         </a>
-
-    <a href="/produtos/{{$produto->id}}/update" class ="btn btn-info btn-sm ml-1">
-        <i class="fas fa-edit"></i>
+    </span>
     </a>
 @endsection
+
 

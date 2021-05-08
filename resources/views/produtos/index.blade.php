@@ -13,6 +13,7 @@
     @endif
 
     <a href="/produtos/add" class="btn btn-dark mb-2">Adicionar</a>
+    <a href="/produtos/showAll" class="btn btn-dark mb-2">Mostrar tudo</a>
 
     <ul class="list-group">
         @foreach($produtos as $produto)

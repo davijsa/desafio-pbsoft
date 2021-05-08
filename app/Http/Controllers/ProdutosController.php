@@ -47,7 +47,13 @@ class ProdutosController extends Controller
     public function show(int $produtoId)
     {
        $produto = Produto::find($produtoId);
-       return view('produtos.show', compact('produto'));
+           return view('produtos.show', compact('produto'));
+    }
+
+    public function showAll()
+    {
+        $produtos = Produto::query()->get();
+        return view('produtos.showAll', compact('produtos'));
     }
 
     public function update(int $produtoId)
